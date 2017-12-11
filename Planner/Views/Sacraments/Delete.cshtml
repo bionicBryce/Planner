@@ -1,0 +1,87 @@
+﻿@model Planner.Models.Sacrament
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Sacrament</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.SacramentDate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.SacramentDate)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Conducting)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Conducting)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.OpeningHymn)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.OpeningHymn)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Invocation)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Invocation)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.SacramentHymn)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.SacramentHymn)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.FirstSpeaker)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FirstSpeaker)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.SecondSpeaker)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.SecondSpeaker)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.RestHymn)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.RestHymn)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ThirdSpeaker)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ThirdSpeaker)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Convocation)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Convocation)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ClosingHymn)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ClosingHymn)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="ID" />
+        <input type="submit" value="Delete" class="btn btn-default" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>
