@@ -25,27 +25,17 @@ namespace Planner.Migrations
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("ClosingHymn");
-
                     b.Property<string>("Conducting");
 
-                    b.Property<string>("Convocation");
+                    b.Property<string>("Speakers");
 
-                    b.Property<string>("FirstSpeaker");
+                    b.Property<string[]>("Prayer");
 
-                    b.Property<string>("Invocation");
-
-                    b.Property<string>("OpeningHymn");
-
-                    b.Property<string>("RestHymn");
+                    b.Property<string[]>("Hymns");
 
                     b.Property<DateTime>("SacramentDate");
 
-                    b.Property<string>("SacramentHymn");
-
-                    b.Property<string>("SecondSpeaker");
-
-                    b.Property<string>("ThirdSeaker");
+                    b.Property<string>("Subject");
 
                     b.HasKey("ID");
 

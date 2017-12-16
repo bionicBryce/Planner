@@ -6,7 +6,8 @@ namespace Planner.Models
     public class SacramentSpeakerViewModel
     {
         public List<Sacrament> sacraments;
-        public SelectList firstspeaker;
-        public string sacramentSpeaker { get; set; }
+        public SelectList speakers;
+        public string SacramentSpeaker { get; set; }
     }
 }
+

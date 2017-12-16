@@ -13,15 +13,11 @@ namespace Planner.Models
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime SacramentDate { get; set; }
         public string Conducting { get; set; }
-        public string OpeningHymn { get; set; }
-        public string Invocation { get; set; }
-        public string SacramentHymn { get; set; }
-        public string FirstSpeaker { get; set; }
-        public string SecondSpeaker { get; set; }
-        public string RestHymn { get; set; }
-        public string ThirdSpeaker { get; set; }
-        public string ClosingHymn { get; set; }
-        public string Convocation { get; set; }
+        public string Hymns { get; set; }
+        public string Prayer { get; set; }
+        public string Speakers { get; set; }
+        public string Subject { get; set; }
 
     }
+
 }

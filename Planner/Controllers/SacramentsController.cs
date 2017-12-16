@@ -18,17 +18,19 @@ namespace Planner.Controllers
             _context = context;
         }
 
+
+
         // GET: Sacraments
         // Requires using Microsoft.AspNetCore.Mvc.Rendering;
         public async Task<IActionResult> Index(string sacramentSpeaker, string searchString)
         {
             // Use LINQ to get list of genres.
             IQueryable<string> speakerQuery = from m in _context.Sacrament
-                                            orderby m.FirstSpeaker
-                                            select m.FirstSpeaker;
+                                              orderby m.Speakers
+                                              select m.Speakers;
 
             var sacraments = from m in _context.Sacrament
-                         select m;
+                             select m;
 
             if (!String.IsNullOrEmpty(searchString))
             {
@@ -37,11 +39,11 @@ namespace Planner.Controllers
 
             if (!String.IsNullOrEmpty(sacramentSpeaker))
             {
-                sacraments = sacraments.Where(x => x.FirstSpeaker == sacramentSpeaker);
+                sacraments = sacraments.Where(x => x.Speakers == sacramentSpeaker);
             }
 
             var sacramentSpeakerVM = new SacramentSpeakerViewModel();
-            sacramentSpeakerVM.firstspeaker = new SelectList(await speakerQuery.Distinct().ToListAsync());
+            sacramentSpeakerVM.speakers = new SelectList(await speakerQuery.Distinct().ToListAsync());
             sacramentSpeakerVM.sacraments = await sacraments.ToListAsync();
 
             return View(sacramentSpeakerVM);
@@ -76,7 +78,7 @@ namespace Planner.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ID,SacramentDate,Conducting,OpeningHymn,Invocation,SacramentHymn,FirstSpeaker,SecondSpeaker,RestHymn,ThirdSpeaker,ClosingHymn,Convocation")] Sacrament sacrament)
+        public async Task<IActionResult> Create([Bind("ID,SacramentDate,Conducting,Hymns,Prayer,Speakers,Subject")] Sacrament sacrament)
         {
             if (ModelState.IsValid)
             {
@@ -108,7 +110,7 @@ namespace Planner.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ID,SacramentDate,Conducting,OpeningHymn,Invocation,SacramentHymn,FirstSpeaker,SecondSpeaker,RestHymn,ThirdSpeaker,ClosingHymn,Convocation")] Sacrament sacrament)
+        public async Task<IActionResult> Edit(int id, [Bind("ID,SacramentDate,Conducting,Hymns,Prayer,Speakers,Subject")] Sacrament sacrament)
         {
             if (id != sacrament.ID)
             {
@@ -135,6 +137,7 @@ namespace Planner.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
+           
             return View(sacrament);
         }
 

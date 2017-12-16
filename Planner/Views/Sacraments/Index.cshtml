@@ -12,7 +12,7 @@
 
 <form asp-controller="Sacraments" asp-action="Index" method="get">
     <p>
-        <select asp-for="sacramentSpeaker" asp-items="Model.firstspeaker">
+        <select asp-for="SacramentSpeaker" asp-items="Model.speakers">
             <option value="">All</option>
         </select>
 
@@ -31,31 +31,16 @@
                     @Html.DisplayNameFor(model => model.sacraments[0].Conducting)
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.sacraments[0].OpeningHymn)
+                    @Html.DisplayNameFor(model => model.sacraments[0].Hymns)
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.sacraments[0].Invocation)
+                    @Html.DisplayNameFor(model => model.sacraments[0].Prayer)
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.sacraments[0].SacramentHymn)
+                    @Html.DisplayNameFor(model => model.sacraments[0].Speakers)
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.sacraments[0].FirstSpeaker)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.sacraments[0].SecondSpeaker)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.sacraments[0].RestHymn)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.sacraments[0].ThirdSpeaker)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.sacraments[0].Convocation)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.sacraments[0].ClosingHymn)
+                    @Html.DisplayNameFor(model => model.sacraments[0].Subject)
                 </th>
             <th></th>
         </tr>
@@ -70,31 +55,16 @@
                 @Html.DisplayFor(modelItem => item.Conducting)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.OpeningHymn)
+                @Html.DisplayFor(modelItem => item.Hymns)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Invocation)
+                @Html.DisplayFor(modelItem => item.Prayer)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.SacramentHymn)
+                @Html.DisplayFor(modelItem => item.Speakers)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.FirstSpeaker)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.SecondSpeaker)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.RestHymn)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ThirdSpeaker)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Convocation)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ClosingHymn)
+                @Html.DisplayFor(modelItem => item.Subject)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |

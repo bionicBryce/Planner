@@ -2,6 +2,41 @@
     ViewData["Title"] = "Home Page";
 }
 
+
+<div class="jumbotron">
+    <h1 style="font-family:'Spectral SC', serif;">Sacrament Planner</h1>
+</div>
+<div class="row">
+    <div class="col-md-4">
+        <h2>Sacrament Planner</h2>
+        <p>
+            <a asp-area="" asp-controller="Sacraments" asp-action="Index">
+
+                <img src="https://static.pexels.com/photos/272337/pexels-photo-272337.jpeg" alt="Scriptures" width="300" height="200" />
+            </a>
+        </p>
+    </div>
+    <div class="col-md-4">
+        <h2>About</h2>
+        <p>
+            <a asp-area="" asp-controller="Home" asp-action="About">
+                <img src="https://static.pexels.com/photos/133699/pexels-photo-133699.jpeg" alt="Chappel" width="300" height="200" />
+            </a>
+        </p>
+    </div>
+    <div class="col-md-4">
+        <h2>Contact</h2>
+        <p>
+            <a asp-area="" asp-controller="Home" asp-action="Contact">
+                <img src="https://static.pexels.com/photos/111121/pexels-photo-111121.jpeg" alt="Temple" width="300" height="200" />
+            </a>
+        </p>
+    </div>
+</div>
+@*@{
+    ViewData["Title"] = "Home Page";
+}
+
 <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="6000">
     <ol class="carousel-indicators">
         <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -103,4 +138,4 @@
             <li><a href="https://go.microsoft.com/fwlink/?LinkID=398609">Publish to Microsoft Azure Web Apps</a></li>
         </ul>
     </div>
-</div>
+</div>*@
